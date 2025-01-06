@@ -29,6 +29,7 @@ function addTask(taskText, completed = false,date) {
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
+    checkbox.className="check-box"
     checkbox.checked = completed;
     checkbox.addEventListener('change', () => {
         li.classList.toggle('completed');
@@ -44,7 +45,8 @@ function addTask(taskText, completed = false,date) {
     span1.innerText=date;
 
     const deleteButton = document.createElement('button');
-    deleteButton.innerText = 'Delete';
+    deleteButton.innerText = '\u00d7';
+    deleteButton.className='del-btn'
     deleteButton.addEventListener('click', () => {
         li.remove();
         saveTasks();
